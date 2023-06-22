@@ -1,0 +1,76 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "first_name": "Nikola",
+      "last_name": "Spasovski",
+      "username": "Spasa",
+      "password": "admin1",
+      "address": "Neka adresa",
+      "phone_number": "018123456",
+      "gender": "M",
+      "admin": true
+    },
+    {
+      "first_name": "Jovan",
+      "last_name": "Jovanovic",
+      "username": "JovanJ",
+      "password": "123456",
+      "address": "Neka adresa",
+      "phone_number": "123456789",
+      "gender": "M",
+      "admin": false,
+      "id": 2
+    },
+    {
+      "first_name": "Petar",
+      "last_name": "Petrovic",
+      "username": "Petra",
+      "password": "15973",
+      "address": "Neka druga adresa",
+      "phone_number": "774321",
+      "gender": "M",
+      "admin": false,
+      "id": 3
+    }
+  ],
+  "ads": [
+    {
+      "id": 1,
+      "title": "Desktop racunar",
+      "description": "Kuciste feniks bluebird 4007 amd athlon 3000g/8gb ddr4/nvme ssd 256gb, matična ploča socket am4 amd a320, procesor amd athlon 3000g 3. 5 ghz, 2c/4t, socket am4, vega 3 gpu, ddr4 memorija 8gb, nvme ssd 256gb, kućište everest flat glass 4, 4 rainbow ventilatora, kaljeno staklo, 500w",
+      "price": "49999 dinara",
+      "image": "https://img.halooglasi.com/slike/oglasi/Thumbs/220124/m/desktop-racunar-5425641488461-71798721148.jpg",
+      "likes": 30,
+      "category_id": "1",
+      "user_id": 1
+    }
+  ],
+  "categories": [
+    {
+      "name": "Računari",
+      "image": "https://th.bing.com/th/id/R.d1bd582503a48ca9b44dd04af0f36e88?rik=pQ%2fR%2fqACH5dmlg&riu=http%3a%2f%2fwww.sscjovancvijic.com%2fwp-content%2fuploads%2fracunar.jpg&ehk=fk9enHgdnN3FLHY67rG80E5DZbiYR9l4gEBr%2fiRuXP4%3d&risl=&pid=ImgRaw&r=0",
+      "id": 1
+    },
+    {
+      "name": "Nekretnine",
+      "image": "https://th.bing.com/th/id/OIP.aBKdgUOxvwvck5WEVuCjggHaHZ?pid=ImgDet&rs=1",
+      "id": 2
+    },
+    {
+      "id": 3,
+      "name": "Automobili",
+      "image": "https://th.bing.com/th/id/OIP.jWwj9x1ud0ESiv_3GSqOBQHaGb?pid=ImgDet&rs=1"
+    },
+    {
+      "id": 4,
+      "name": "Telefoni",
+      "image": "https://cdn.chv.me/images/thumbnails/xnIpLKsl.jpg.thumb_400x400.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Odeća",
+      "image": "https://th.bing.com/th/id/R.e31289a0ac704ce8858022cdc32f3684?rik=a4xw3NUw%2bM7qhw&riu=http%3a%2f%2fimg.izismile.com%2fimg%2fimg2%2f20090319%2fmale_model_37.jpg&ehk=XDxbukh%2foi1F7sd2Y5nVrEJcQmPMoRjrQe3H4h5hbuA%3d&risl=&pid=ImgRaw&r=0"
+    }
+  ]
+}

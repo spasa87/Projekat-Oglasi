@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Nikola Spasovski">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <title>Registration</title>
+    <link rel="stylesheet" href="../Style/registration.css">
+</head>
+<body>
+    <header>
+        <h1>Oglasi</h1>
+    </header>
+    <section>
+        <div id="wrapper">
+            <h2>Registruj se: </h2>
+            <div id="labelsAndInputs">
+                <div id="labels">
+                    <label>Ime:</label>
+                    <br>
+                    <label>Prezime:</label>
+                    <br>
+                    <label>Korisničko ime:</label>
+                    <br>
+                    <label>Šifra:</label>
+                    <br>
+                    <label>Potvrdite šifru:</label>
+                    <br>
+                    <label>Adresa:</label>
+                    <br>
+                    <label>Broj telefona:</label>
+                    <br>
+                    <label>Pol:</label>
+                    <br>
+                    <label>Administrator:</label>
+                </div>
+                <div id="inputs">
+                    <input id="input_name" placeholder="Unesite ime">
+                    <br>
+                    <input id="input_lastName" placeholder="Unesite prezime">
+                    <br>
+                    <input id="input_username" placeholder="Unesite korisničko ime">
+                    <br>
+                    <input id="input_password" type="password" placeholder="Unesite šifru">
+                    <br>
+                    <input id="input_confirmPassword" type="password" placeholder="Potvrdite šifru">
+                    <br>
+                    <input id="input_adress" placeholder="Unesite adresu">
+                    <br>
+                    <input id="input_phoneNumber" placeholder="Unesite broj telefona">
+                    <br>
+                    <input id="male" type="radio" name="gender" value="M" checked>
+                    <label>Muški</label>
+                    <input type="radio" name="gender" value="F">
+                    <labeL>Ženski</labeL>
+                    <br>
+                    <input id="admin" type="checkbox" name="admin" checked>
+                    <label>Administrator</label>
+                    <input id="user" type="checkbox" name="admin">
+                    <label>Korisnik</label>
+            </div>
+        </div>
+        <div id="btnDiv">
+            <button id="register">Registruj se</button>
+        </div>
+        <br>
+        <p id="message"></p>
+    </section>
+    <div id="instructions">
+        <h3>Važno:</h3>
+        <br>
+        <pre>Da bi ste se uspešno registrovali, <b>potrebno je da popunite sva polja</b>.
+        Šifra i potvrda šifre <b>moraju da se poklapaju</b>.
+        Korisničko ime i šifra <b>moraju da sadrže više od 5 karaktera</b>.</pre>
+    </div>
+    <script src="../JS/registration.js" type="module"></script>
+</body>
+</html>

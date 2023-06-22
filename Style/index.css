@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lobster', cursive;
+}
+
+body {
+    background-color: #EFEFEF;
+}
+
+header {
+    background: #00bfff;
+    border: 1px solid #928e8e;
+    padding: 5px;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+nav {
+    background-image: url("https://th.bing.com/th/id/R.2b7586ae87ece8d866f7f9d40ab381d8?rik=uB5pSt2HwNuh8w&riu=http%3a%2f%2fwww.bhmpics.com%2fwallpapers%2finterior_chair_in_the_room-800x480.jpg&ehk=Oz9t2GCX3lH4CmahRaV6zKBVpfqEpaJhRicKpcsrdBA%3d&risl=&pid=ImgRaw&r=0");
+    background-size: cover;
+    background-position: center center;
+    height: 500px;
+    text-align: center;
+}
+
+nav button {
+    margin-top: 10%;
+    margin-left: 20px;
+    width: 200px;
+    height: 50px;
+    font-size: 2rem;
+    padding: 5px;
+    background-color: #00bfff;
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+nav button:hover {
+    background: rgb(28,119,150);
+    background: linear-gradient(146deg, rgba(28,119,150,1) 44%, rgba(0,191,255,1) 73%);
+    opacity: 1;
+}
+
+section {
+    margin: 5px auto 0 auto;
+    width: 660px;
+    background-color: white;
+    text-align: center;
+    padding: 5px;
+}
+
+#sectionHead {
+    height: 30px;
+}
+
+img {
+    width: 150px;
+    height: 150px;
+}
+
+#sectionTitle {
+    float: left;
+}
+
+#wrapper {
+    position: relative;
+    height: 180px;
+}
+
+#left, #right {
+    position: absolute;
+    top: 30%;
+    z-index: 1;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 2rem;
+}
+
+#left {
+    left: 30%;
+}
+
+#right {
+    right: 30%;
+}
+
+#content {
+    position: absolute;
+    left: 35%;
+    width: 30%;
+    text-align: center;
+}

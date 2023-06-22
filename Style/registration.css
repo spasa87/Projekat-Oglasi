@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lobster', cursive;
+}
+
+body {
+    background-color: #EFEFEF;
+}
+
+header {
+    background-color:#00bfff;
+    border: 1px solid #928e8e;
+    padding: 5px;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+section {
+    margin: 10% auto 0 auto;
+    width: 550px;
+    padding: 5px;
+    background: #00bfff;
+    text-align: center;
+    border-radius: 5%;
+}
+
+h2 {
+    text-align: center;
+}
+
+#labelsAndInputs {
+    width: 100%;
+    height: 300px;
+    padding: 30px 70px;
+    background-color: #48adcf;
+    border-radius: 10px 100px / 120px;
+}
+
+#labels {
+    float: left;
+    font-size: 1.4rem;
+    text-align: right;
+}
+
+#inputs {
+    float: right;
+    font-size: 1.4rem;
+}
+
+input {
+    font-size: 1.1rem;
+}
+
+input[name~=gender] {
+    margin-top: 10px;
+}
+
+button {
+    padding: 3px;
+    margin-top: 10px;
+    width: 100px;
+    height: 50px;
+    font-size: 1rem;
+    background-color: #48adcf;
+    cursor: pointer;
+}
+
+button:hover {
+    width: 120px;
+    font-size: 1.1rem;
+    background: rgb(142,227,255);
+    background: linear-gradient(146deg, rgba(142,227,255,1) 44%, rgba(72,173,207,1) 73%);
+}
+
+.error {
+    border: 2px solid red;
+}
+
+#instructions {
+    width: 600px;
+    margin: 15px auto 0 auto;
+    padding: 5px;
+    background-color: #00bfff;
+    text-align: center;
+    font-size: 1.4rem;
+}
