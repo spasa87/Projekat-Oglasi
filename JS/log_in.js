@@ -1,4 +1,4 @@
-import { getAllUsers } from "./catch.js";
+import { getAllUsers } from "../Api/catch_logIn.js";
 
 const btnLogIn = document.getElementById("logIn");
 btnLogIn.addEventListener("click", async function() {
@@ -17,14 +17,15 @@ btnLogIn.addEventListener("click", async function() {
         if (username === users[i].username && password === users[i].password) {
             if (users[i].admin == true) {
                 window.open(`admin.html?id=${users[i].id}`, "_self");
+                text.innerHTML = "Dobro došli.";
                 return;
             } else {
-                // window.open(`user.html?id=${users[i].id}`, "_self");
-                console.log("Uspesna prijava korisnika."); //Kada prijavim korisnika kod nastavlja dalje i ulazi u sledeci else. To nam i nije bitno posto ce da otvori novu stranicu pa se poruka nece videti. Barem ja tako mislim :)
+                window.open(`user.html?id=${users[i].id}`, "_self");
+                text.innerHTML = "Dobro došli.";
                 return;
             }
         } else {
             text.innerHTML = "Korisnik sa unetim korisničkim imenom i šifrom ne postoji.";
         }
     }
-})
+});

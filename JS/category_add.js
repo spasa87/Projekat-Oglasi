@@ -1,4 +1,4 @@
-import { addCategory } from "./catch.js";
+import { addCategory } from "../Api/catch_categoryAdd.js";
 
 const urlSearch = window.location.search;
 const splitUrl = urlSearch.split("=");

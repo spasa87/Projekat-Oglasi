@@ -1,4 +1,4 @@
-import { updateCategory, getCategoryById } from "./catch.js";
+import { updateCategory, getCategoryById } from "../Api/catch_categoryEdit.js";
 
 const urlSearch = window.location.search;
 const splitSearch = urlSearch.split("&");

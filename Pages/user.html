@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../Style/user.css">
+    <title>User page</title>
+</head>
+<body>
+    <header>
+        <h1>Oglasi</h1>
+    </header>
+    <nav>
+        <button id="new">Novi oglas</button>
+        <button id="ads">Pregled svih oglasa</button>
+    </nav>
+    <section>
+        <h2>Dobro dosli</h2>
+        <div id="userProfile">
+            <h2 id="firstLastName"></h2>
+            <p id="username"></p>
+            <p id="password"></p>
+            <p id="address"></p>
+            <p id="phone"></p>
+            <p id="gender"></p>
+        </div>
+        <div id="select">
+            <label>Izaberite kategoriju:</label>
+            <select id="selectCat"></select>
+            <button id="filter">Filtriraj</button>
+        </div>
+        <div id="userAds"></div>
+    </section>
+    <script src="../JS/user.js" type="module"></script>
+</body>
+</html>

@@ -1,48 +1,62 @@
-import { getAllCategories } from "./catch.js";
+import { getAllCategories } from "../Api/catch_index.js";
 
-let currentIndex = 0;
-let allCategories;
+const carousel = document.getElementById("carousel");
+const btnLeft = document.getElementById("left");
+const btnRight = document.getElementById("right");
 
-const content = document.getElementById("content");
-const img = document.createElement("img");
-content.appendChild(img);
-const title = document.createElement("h3");
-content.appendChild(title);
+let firstImageWidth;
 
-async function loadPage() {
-    allCategories = await getAllCategories();
-        
-    img.src = allCategories[currentIndex].image;
-    title.innerHTML = allCategories[currentIndex].name;  
+async function loadCarousel() {
+    const allCategories = await getAllCategories();
+
+    for(let i = 0; i < allCategories.length; i++) {
+        const content = document.createElement("div");
+        content.classList = "content";
+        carousel.appendChild(content);
+        const image = document.createElement("img");
+        image.src = allCategories[i].image;
+        content.appendChild(image);
+        const title = document.createElement("h4");
+        title.innerHTML = allCategories[i].name;
+        content.appendChild(title);
+    }
+    
+    const firstImage = document.querySelector('img');
+    firstImageWidth = firstImage.clientWidth + 14;
 }
 
-document.getElementById("right").addEventListener("click", changeRight);
-document.getElementById("left").addEventListener("click", changeLeft);
+let isDragStart = false, prevPageX, prevScrollLeft;
 
-function changeRight() {
-    currentIndex += 1;
-    if (currentIndex == -1) {
-        currentIndex = allCategories.length - 1
-    }
-    if (currentIndex == allCategories.length) {
-        currentIndex = 0
-    }
-    img.src = allCategories[currentIndex].image;
-    title.innerHTML = allCategories[currentIndex].name;
+const dragStart = (e) => {
+    isDragStart = true;
+    prevPageX = e.pageX;
+    prevScrollLeft = carousel.scrollLeft;
 }
 
-function changeLeft() {
-    currentIndex += -1
-    if (currentIndex == -1) {
-        currentIndex = allCategories.length - 1
-    }
-    if (currentIndex == allCategories.length) {
-        currentIndex = 0
-    }
-    img.src = allCategories[currentIndex].image;
-    title.innerHTML = allCategories[currentIndex].name;
+const dragging = (e) => {
+    if(!isDragStart) return;
+    e.preventDefault();
+    carousel.classList.add("dragging");
+    let positionDiff = e.pageX - prevPageX;
+    carousel.scrollLeft = prevScrollLeft - positionDiff;
 }
-window.addEventListener("load", loadPage);
+
+const dragStop = () => {
+    isDragStart = false;
+    carousel.classList.remove("dragging");
+}
+
+carousel.addEventListener("mousedown", dragStart);
+carousel.addEventListener("mouseover", dragging);
+carousel.addEventListener("mouseup", dragStop);
+loadCarousel();
+
+btnLeft.addEventListener('click', changeImage)
+btnRight.addEventListener('click', changeImage)
+
+function changeImage() {
+    carousel.scrollLeft += this.id === 'left' ? -firstImageWidth : firstImageWidth
+}
 
 document.getElementById("reg").addEventListener("click", function() {
     window.open("Pages/registration.html", "_self");

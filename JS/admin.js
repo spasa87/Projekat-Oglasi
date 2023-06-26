@@ -1,4 +1,4 @@
-import { getUserById, getAllCategories, deleteCategory } from "./catch.js";
+import { getUserById, getAllCategories, deleteCategory } from "../Api/catch_admin.js";
 
 const urlSearch = window.location.search;
 const splitUrl = urlSearch.split("=");

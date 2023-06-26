@@ -47,8 +47,9 @@ nav button:hover {
 
 section {
     margin: 5px auto 0 auto;
-    width: 660px;
+    width: 70%;
     background-color: white;
+    padding: 0 60px;
     text-align: center;
     padding: 5px;
 }
@@ -57,41 +58,58 @@ section {
     height: 30px;
 }
 
-img {
-    width: 150px;
-    height: 150px;
-}
-
 #sectionTitle {
     float: left;
 }
 
 #wrapper {
+    width: 100%;
     position: relative;
-    height: 180px;
 }
 
-#left, #right {
+#wrapper button {
     position: absolute;
-    top: 30%;
-    z-index: 1;
+    top: 50%;
     width: 40px;
     height: 40px;
-    border-radius: 50%;
-    font-size: 2rem;
-}
-
-#left {
-    left: 30%;
-}
-
-#right {
-    right: 30%;
-}
-
-#content {
-    position: absolute;
-    left: 35%;
-    width: 30%;
     text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.8rem;
+    transform: translateY(-50%);
+}
+
+#wrapper #left {
+    left: -23px;
+}
+
+#wrapper #right {
+    right: -23px;
+}
+
+#wrapper #carousel {
+    white-space: nowrap;
+    cursor: pointer;
+    overflow: hidden;
+    scroll-behavior: smooth;
+    user-select: none;
+}
+
+#carousel .dragging {
+    cursor: grab;
+    scroll-behavior: auto;
+}
+
+#carousel .dragging .content {
+    pointer-events: none;
+}
+
+#carousel .content {
+    display: inline-block;
+    width: calc(100% / 3);
+    object-fit: cover;
+}
+
+.content img {
+    height: 100px;
 }
