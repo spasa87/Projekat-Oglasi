@@ -28,6 +28,7 @@ nav button {
     float: right;
     margin-right: 20px;
     padding: 5px;
+    width: 130px;
     height: 50px;
     cursor: pointer;
     border-radius: 10% / 50%;

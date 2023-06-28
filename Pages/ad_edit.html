@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../Style/ad_add.css">
-    <title>Dodavanje oglasa</title>
+    <link rel="stylesheet" href="/Style/ad_edit.css">
+    <title>Ažuriranje</title>
 </head>
 <body>
     <header>
@@ -37,10 +37,23 @@
             </div>
         </div>
         <div id="bottom">
-            <button id="addAd">Add</button>
+            <button id="updateAd">Ažuriraj</button>
             <p id="error"></p>
         </div>
     </section>
-    <script src="../JS/ad_add.js" type="module"></script>
+    <div id="showAd">
+        <h3 id="ad_title"></h3>
+        <br>
+        <img id="ad_image">
+        <br>
+        <p id="ad_description"></p>
+        <br>
+        <p id="ad_price"></p>
+        <br>
+        <p id="ad_likes"></p>
+        <br>
+        <p id="ad_category"></p>
+    </div>
+    <script src="/JS/ad_edit.js" type="module"></script>
 </body>
 </html>

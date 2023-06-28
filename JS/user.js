@@ -85,7 +85,7 @@ async function loadAds(adsOfUser) {
         container.appendChild(adCategory);
         const updateLink = document.createElement("a");
         updateLink.innerHTML = "Ažuriraj oglas";
-        updateLink.href = `ad_edit.html?id=${adsOfUser[i].id}`, "_self";
+        updateLink.href = `ad_edit.html?id=${id}&adId=${adsOfUser[i].id}`, "_self";
         container.appendChild(updateLink);
     }
 }
@@ -111,5 +111,9 @@ document.getElementById("new").addEventListener("click", function() {
 document.getElementById("ads").addEventListener("click", function() {
     window.open(`ads.html?id=${id}`, "_self");
 });
+
+document.getElementById("logOut").addEventListener("click", function() {
+    window.open("../index.html", "_self");
+})
 
 window.addEventListener("load", loadPage);

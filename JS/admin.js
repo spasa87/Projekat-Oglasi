@@ -64,4 +64,8 @@ async function loadTable() {
     }
 }
 
+document.getElementById("logOut").addEventListener("click", function() {
+    window.open("../index.html", "_self");
+})
+
 window.addEventListener("load", loadPage);

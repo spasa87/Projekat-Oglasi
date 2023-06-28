@@ -4,6 +4,4 @@ async function getAllCategories() {
     return data;
 }
 
-
-
 export { getAllCategories };
