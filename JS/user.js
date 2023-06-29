@@ -58,6 +58,7 @@ async function loadAds(adsOfUser) {
         deleteAds.addEventListener("click", async function() {
             await deleteAd(adsOfUser[i].id);
             this.parentNode.remove();
+            window.location.reload();
         });
         container.appendChild(deleteAds);
         const adImg = document.createElement("img");
