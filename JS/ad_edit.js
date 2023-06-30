@@ -61,3 +61,7 @@ async function adUpdate() {
 }
 
 window.addEventListener("load", loadPage);
+
+document.getElementById("btn_profile").addEventListener("click", function() {
+    window.open(`user.html?id=${user_id}`, "_self");
+});

@@ -11,11 +11,15 @@
 <body>
     <header>
         <h1>Oglasi</h1>
+        <a class="logOut">
+            <i id="log_out" class="fa-solid fa-right-from-bracket"></i>
+            <i id="btnLogOut" class="fa-solid fa-right-from-bracket fa-fade" title="Odjavi se"></i>
+        </a>
+        <a class="categoryAdd">
+            <i id="addCat" class="fa-solid fa-file-circle-plus"></i>
+            <i id="btnAdd" class="fa-solid fa-file-circle-plus fa-bounce" title="Dodaj kategoriju"></i>
+        </a>
     </header>
-    <nav>
-        <button id="logOut">Odjavi se</button>
-        <button id="category_add">Dodavanje kategorije</button>
-    </nav>
     <section>
         <h2>Dobro dosli</h2>
         <div id="adminProfile">
@@ -26,18 +30,18 @@
             <p id="phone"></p>
             <p id="gender"></p>
         </div>
-        <div id="categoryWrapper">
-            <table id="categoryTable">
-                <tr>
-                    <th>Number</th>
-                    <th>Name</th>
-                    <th>Image</th>
-                    <th>Delete</th>
-                    <th>Update</th>
-                </tr>
-            </table>
-        </div>
     </section>
+    <div id="categoryWrapper">
+        <table id="categoryTable">
+            <tr>
+                <th>Ime</th>
+                <th>Slika</th>
+                <th>Obriši</th>
+                <th>Ažuriraj</th>
+            </tr>
+        </table>
+    </div>
+    <script src="https://kit.fontawesome.com/f91b415289.js" crossorigin="spasa87"></script>
     <script src="/JS/admin.js" type="module"></script>
 </body>
 </html>

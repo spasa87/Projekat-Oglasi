@@ -11,6 +11,10 @@
 <body>
     <header>
         <h1>Oglasi</h1>
+        <a class="home">
+            <i id="btnHome" class="fa-solid fa-house"></i>
+            <i id="btnHover" class="fa-solid fa-house fa-flip"></i>
+        </a>
     </header>
     <section>
         <div id="wrapper">
@@ -36,19 +40,19 @@
                     <label>Administrator:</label>
                 </div>
                 <div id="inputs">
-                    <input id="input_name" placeholder="Unesite ime">
+                    <input id="input_name" class="in" placeholder="Unesite ime">
                     <br>
-                    <input id="input_lastName" placeholder="Unesite prezime">
+                    <input id="input_lastName" class="in" placeholder="Unesite prezime">
                     <br>
-                    <input id="input_username" placeholder="Unesite korisničko ime">
+                    <input id="input_username" class="in" placeholder="Unesite korisničko ime">
                     <br>
-                    <input id="input_password" type="password" placeholder="Unesite šifru">
+                    <input id="input_password" class="in" type="password" placeholder="Unesite šifru">
                     <br>
-                    <input id="input_confirmPassword" type="password" placeholder="Potvrdite šifru">
+                    <input id="input_confirmPassword" class="in" type="password" placeholder="Potvrdite šifru">
                     <br>
-                    <input id="input_adress" placeholder="Unesite adresu">
+                    <input id="input_adress" class="in" placeholder="Unesite adresu">
                     <br>
-                    <input id="input_phoneNumber" placeholder="Unesite broj telefona">
+                    <input id="input_phoneNumber" class="in" placeholder="Unesite broj telefona">
                     <br>
                     <input id="male" type="radio" name="gender" value="M" checked>
                     <label>Muški</label>
@@ -72,6 +76,7 @@
         Šifra i potvrda šifre <b>moraju da se poklapaju</b>.
         Korisničko ime i šifra <b>moraju da sadrže više od 5 karaktera</b>.</pre>
     </div>
+    <script src="https://kit.fontawesome.com/f91b415289.js" crossorigin="spasa87"></script>
     <script src="../JS/registration.js" type="module"></script>
 </body>
 </html>

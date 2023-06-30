@@ -16,30 +16,37 @@ header {
 }
 
 h1 {
+    display: inline-block;
     font-size: 2.5rem;
 }
 
-nav {
-    height: 50px;
-    background-color: #00bfff;
-}
-
-nav button {
+header .categoryAdd, .logOut {
     float: right;
-    margin-right: 20px;
-    padding: 5px;
-    width: 130px;
-    height: 50px;
-    cursor: pointer;
-    border-radius: 10% / 50%;
-    background-color: #3b95b3;
-    color: white;
+    margin: 10px 5px 0 0;
+    font-size: 2rem;
+    color: #0081ac;
 }
 
-nav button:hover {
-    width: 140px;
-    background-color: #14b9f0;
-    color:black;
+header .categoryAdd {
+    margin-right: 30px;
+}
+
+.categoryAdd:hover #addCat, .categoryAdd #btnAdd {
+    display: none;
+}
+
+.categoryAdd:hover #btnAdd {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.logOut:hover #log_out, .logOut #btnLogOut {
+    display: none;
+}
+
+.logOut:hover #btnLogOut {
+    display: inline-block;
+    cursor: pointer;
 }
 
 section {
@@ -47,6 +54,7 @@ section {
     margin: 10px auto 0 auto;
     text-align: center;
     background-color: #00bfff;
+    border-radius: 20px;
 }
 
 section h2 {
@@ -57,39 +65,49 @@ section p {
     font-size: 1.5rem;
 }
 
-section table {
+#categoryWrapper {
+    width: 600px;
+    margin: 20px auto 0 auto;
+    text-align: center;
+    background-color: #00bfff;
+    border-radius: 20px;
+}
+
+#categoryWrapper table {
     margin-top: 20px;
     width: 100%;
-    border-top: 1px solid black;
     font-size: 1.5rem;
 }
 
-section img {
+#categoryWrapper img {
     width: 100px;
     height: 100px;
 }
 
-table button {
-    width: 40px;
-    height: 40px;
-    font-size: 1.5rem;
-    font-family: Arial, Helvetica, sans-serif;
-    border-radius: 50%;
+.delLink {
+    font-size: 2.7rem;
+    color: #0081ac;
+}
+
+.delLink:hover #imgDel, .delLink #btnDel {
+    display: none;
+}
+
+.delLink:hover #btnDel {
+    display: inline-block;
     cursor: pointer;
 }
 
-table button:hover{
-    background-color: red;
-    color: yellow;
-}
-
 .link {
-    font-size: 4rem;
-    text-decoration: none;
-    color: black;
+    font-size: 2.7rem;
+    color: #0081ac;
 }
 
-.link:hover {
-    font-size: 4.5rem;
-    color: red;
+.link:hover #imgUpdate, .link #btnUpdate {
+    display: none;
+}
+
+.link:hover #btnUpdate {
+    display: inline-block;
+    cursor: pointer;
 }

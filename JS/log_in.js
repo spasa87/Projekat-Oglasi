@@ -29,3 +29,11 @@ btnLogIn.addEventListener("click", async function() {
         }
     }
 });
+
+document.getElementById("register").addEventListener("click", function() {
+    window.open("registration.html", "_self");
+})
+
+document.getElementById("btnHover").addEventListener("click", function() {
+    window.open("../index.html", "_self");
+})

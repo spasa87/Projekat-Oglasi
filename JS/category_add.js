@@ -17,3 +17,7 @@ document.getElementById("add_category").addEventListener("click", async function
     await addCategory(name, image);
     window.open(`admin.html?id=${id}`, "_self");
 });
+
+document.getElementById("btn_goBack").addEventListener("click", function() {
+    window.open(`admin.html?id=${id}`, "_self");
+});

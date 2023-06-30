@@ -10,13 +10,30 @@ body {
 }
 
 header {
-    background: #00bfff;
-    border: 1px solid #928e8e;
+    background: rgb(0, 191, 255);
+    border: 1px solid rgb(146, 142, 142);
     padding: 5px;
 }
 
-h1 {
+header h1 {
+    display: inline-block;
     font-size: 2.5rem;
+}
+
+header .home {
+    float: right;
+    margin: 10px 5px 0 0;
+    font-size: 2rem;
+    color: #0081ac;
+}
+
+.home:hover #btnHome, .home #btnHover {
+    display: none;
+}
+
+.home:hover #btnHover {
+    display: inline-block;
+    cursor: pointer;
 }
 
 h2 {

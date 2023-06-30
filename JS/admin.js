@@ -4,10 +4,6 @@ const urlSearch = window.location.search;
 const splitUrl = urlSearch.split("=");
 const idOfUser = Number(splitUrl[1]);
 
-document.getElementById("category_add").addEventListener("click", function() {
-    window.open(`category_add.html?id=${idOfUser}`, "_self");
-});
-
 async function loadPage() {
     const userInfo = await getUserById(idOfUser);
     document.getElementById("firstLastName").innerHTML = `-- ${userInfo.first_name} ${userInfo.last_name} --`;
@@ -31,10 +27,6 @@ async function loadTable() {
     for(let i = 0; i < categories.length; i++) {
         const tr = document.createElement("tr");
         table.appendChild(tr);
-
-        const number = document.createElement("td");
-        number.innerHTML = i + 1;
-        tr.appendChild(number);
         const name = document.createElement("td");
         name.innerHTML = categories[i].name;
         tr.appendChild(name);
@@ -43,29 +35,52 @@ async function loadTable() {
         const img = document.createElement("img");
         img.src = categories[i].image;
         images.appendChild(img);
+
         const tdDelete = document.createElement("td");
-        const btnDel = document.createElement("button");
-        btnDel.innerHTML = "X";
-        btnDel.title = "Delete category";
-        tdDelete.appendChild(btnDel);
+        const linkDel = document.createElement("a");
+        linkDel.classList = "delLink";
+        tdDelete.appendChild(linkDel);
+        const imgDel = document.createElement("i");
+        imgDel.classList = "fa-solid fa-trash-can";
+        imgDel.id = "imgDel";
+        linkDel.appendChild(imgDel);
+        const btnDel = document.createElement("i");
+        btnDel.classList = "fa-solid fa-trash-can fa-beat-fade";
+        btnDel.id = "btnDel";
+        btnDel.title = `Obrisi ${categories[i].name}`;
         btnDel.addEventListener("click", async function() {
             await deleteCategory(categories[i].id);
-            this.parentNode.parentNode.remove();
-        });
+            this.parentNode.parentNode.parentNode.remove();
+            });
+        linkDel.appendChild(btnDel);
         tr.appendChild(tdDelete);
-        const azuriranje = document.createElement("td");
+
+        const update = document.createElement("td");
         const link = document.createElement("a");
-        link.href = `category_edit.html?idOfuser=${idOfUser}&idOfCategory=${categories[i].id}`;
         link.classList = "link";
-        link.title = `Update ${categories[i].name}`;
-        link.innerHTML = "&#x261C";
-        azuriranje.appendChild(link);
-        tr.appendChild(azuriranje);
+        link.title = `Ažuriraj ${categories[i].name}`;
+        const imgUpdate = document.createElement("i");
+        imgUpdate.classList = "fa-solid fa-file-arrow-up";
+        imgUpdate.id = "imgUpdate";
+        link.appendChild(imgUpdate);
+        const btnUpdate = document.createElement("i");
+        btnUpdate.classList = "fa-solid fa-file-arrow-up fa-flip";
+        btnUpdate.id = "btnUpdate";
+        btnUpdate.addEventListener("click", function() {
+            window.open(`category_edit.html?idOfuser=${idOfUser}&idOfCategory=${categories[i].id}`, "_self");
+        });
+        link.appendChild(btnUpdate);
+        update.appendChild(link);
+        tr.appendChild(update);
     }
 }
 
-document.getElementById("logOut").addEventListener("click", function() {
+document.getElementById("btnLogOut").addEventListener("click", function() {
     window.open("../index.html", "_self");
 })
+
+document.getElementById("btnAdd").addEventListener("click", function() {
+    window.open(`category_add.html?id=${idOfUser}`, "_self");
+});
 
 window.addEventListener("load", loadPage);

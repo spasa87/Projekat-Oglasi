@@ -57,3 +57,7 @@ async function register() {
 
     window.open(`../index.html`, "_self");
 }
+
+document.getElementById("btnHover").addEventListener("click", function() {
+    window.open("../index.html", "_self");
+})

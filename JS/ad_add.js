@@ -34,3 +34,7 @@ document.getElementById("addAd").addEventListener("click", async function() {
     await addAd(title, description, price, image, 0, categoryId, id);
     window.open(`user.html?id=${id}`, "_self");
 });
+
+document.getElementById("btn_profile").addEventListener("click", function() {
+    window.open(`user.html?id=${id}`, "_self");
+});

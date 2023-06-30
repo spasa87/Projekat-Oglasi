@@ -31,3 +31,7 @@ document.getElementById("update").addEventListener("click", async function() {
     await updateCategory(idOfCategory, name, image);
     window.open(`admin.html?id=${idOfUser}`, "_self");
 });
+
+document.getElementById("btn_goBack").addEventListener("click", function() {
+    window.open(`admin.html?id=${idOfUser}`, "_self");
+});

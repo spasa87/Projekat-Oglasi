@@ -16,6 +16,7 @@ header {
 }
 
 h1 {
+    display: inline-block;
     font-size: 2.5rem;
 }
 
@@ -24,32 +25,57 @@ nav {
     background-color: #00bfff;
 }
 
-nav button {
+header .logOut, .adAdd, .watch {
     float: right;
-    margin-right: 20px;
-    padding: 5px;
-    width: 150px;
-    height: 50px;
-    cursor: pointer;
-    border-radius: 10% / 50%;
-    background-color: #3b95b3;
-    color: white;
+    margin: 10px 5px 0 0;
+    font-size: 2rem;
+    color: #0081ac;
 }
 
-nav button:hover {
-    width: 160px;
-    background-color: #14b9f0;
-    color:black;
+header .adAdd, .watch {
+    margin-right: 30px;
+}
+
+.watch:hover #img_watch, .watch #btn_watch {
+    display: none;
+}
+
+.watch:hover #btn_watch {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.adAdd:hover #addAd, .adAdd #btnAdd {
+    display: none;
+}
+
+.adAdd:hover #btnAdd {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.logOut:hover #log_out, .logOut #btnLogOut {
+    display: none;
+}
+
+.logOut:hover #btnLogOut {
+    display: inline-block;
+    cursor: pointer;
 }
 
 section {
-    width: 95%;
+    width: 90%;
     margin: 10px auto 0 auto;
     text-align: center;
+}
+
+section #userProfile, #title {
+    width: 50%;
+    margin: 0 auto;
     background-color: #00bfff;
 }
 
-section h2 {
+section #title, #firstLastName {
     font-size: 2rem;
 }
 
@@ -57,45 +83,45 @@ section p {
     font-size: 1.5rem;
 }
 
-section #userAds {
-    float: left;
-    margin-top: 20px;
-    width: 100%;
+#userAds {
+    width: 70%;
+    margin: 20px auto;
+    text-align: center;
 }
 
-section #userAds .container {
+#userAds .container {
     float: left;
     flex: content;
     width: calc(100% / 3.03);
-    height: 600px;
+    height: 580px;
     margin-top: 2px;
     margin-left: 2px;
     background-color: #48adcf;
 }
 
-section #userAds .container img {
+#userAds .container img {
     width: 200px;
     height: 200px;
 }
 
-section #userAds .container .catTitle {
-    height: 25%;
+#userAds .container .catTitle {
+    height: 20%;
     overflow: hidden;
     overflow-y: auto;
 }
 
-section #userAds p {
+#userAds p {
     font-size: 1rem;
 }
 
-section #userAds .description {
+#userAds .description {
     margin-top: 10px;
     max-height: 60px;
     overflow: hidden;
     overflow-y: auto;
 }
 
-section #userAds a {
+#userAds #update_link {
     display: block;
     margin-top: 20px;
     font-size: 1.3rem;
@@ -103,40 +129,40 @@ section #userAds a {
     color: white;
 }
 
-section #userAds a:hover {
+#userAds #update_link:hover {
     font-size: 1.5rem;
     text-decoration: underline;
     color: red;
 }
 
-section #select {
+#select {
     text-align: left;
-    margin-top: 20px;
+    margin: 20px 0 0 150px;
     font-size: 1.2rem;
 }
 
-section #select select, button {
+#select select, #filter {
     font-size: 1.1rem;
 }
 
-section #select button:hover {
+#select #filter:hover {
     background-color: red;
     color:yellow;
-    font-size: 1.2rem;
     cursor: pointer;
 }
 
-section .deleteBtn {
+.delLink {
     float: right;
-    width: 30px;
-    height: 30px;
-    font-size: 1.5rem;
-    font-family: Arial, Helvetica, sans-serif;
-    border-radius: 50%;
-    cursor: pointer;
+    margin: 0 10px 3px 0;
+    font-size: 2rem;
+    color: #0081ac;
 }
 
-section .deleteBtn:hover {
-    background-color: red;
-    color: yellow;
+.delLink:hover #imgDel, .delLink #btnDel {
+    display: none;
+}
+
+.delLink:hover #btnDel {
+    display: inline-block;
+    cursor: pointer;
 }

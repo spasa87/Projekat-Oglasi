@@ -52,15 +52,24 @@ async function loadAds(adsOfUser) {
         const container = document.createElement("div");
         container.classList = "container";
         userAds.appendChild(container);
-        const deleteAds = document.createElement("button");
-        deleteAds.innerHTML = "X";
-        deleteAds.classList = "deleteBtn";
-        deleteAds.addEventListener("click", async function() {
+
+        const linkDel = document.createElement("a");
+        linkDel.classList = "delLink";
+        container.appendChild(linkDel);
+        const imgDel = document.createElement("i");
+        imgDel.classList = "fa-solid fa-trash-can";
+        imgDel.id = "imgDel";
+        linkDel.appendChild(imgDel);
+        const btnDel = document.createElement("i");
+        btnDel.classList = "fa-solid fa-trash-can fa-beat-fade";
+        btnDel.id = "btnDel";
+        btnDel.title = "Obrisi";
+        btnDel.addEventListener("click", async function() {
             await deleteAd(adsOfUser[i].id);
-            this.parentNode.remove();
+            this.parentNode.parentNode.remove();
             window.location.reload();
-        });
-        container.appendChild(deleteAds);
+            });
+        linkDel.appendChild(btnDel);
         const adImg = document.createElement("img");
         adImg.src = adsOfUser[i].image;
         container.appendChild(adImg);
@@ -85,6 +94,7 @@ async function loadAds(adsOfUser) {
         adCategory.innerHTML = `Kategorija: ${category.name}`;
         container.appendChild(adCategory);
         const updateLink = document.createElement("a");
+        updateLink.id = "update_link";
         updateLink.innerHTML = "Ažuriraj oglas";
         updateLink.href = `ad_edit.html?id=${id}&adId=${adsOfUser[i].id}`, "_self";
         container.appendChild(updateLink);
@@ -105,15 +115,15 @@ async function filterCat() {
     loadAds(filterCat);
 };
 
-document.getElementById("new").addEventListener("click", function() {
+document.getElementById("btnAdd").addEventListener("click", function() {
     window.open(`ad_add.html?id=${id}`, "_self");
 });
 
-document.getElementById("ads").addEventListener("click", function() {
+document.getElementById("btn_watch").addEventListener("click", function() {
     window.open(`ads.html?id=${id}`, "_self");
 });
 
-document.getElementById("logOut").addEventListener("click", function() {
+document.getElementById("btnLogOut").addEventListener("click", function() {
     window.open("../index.html", "_self");
 })
 

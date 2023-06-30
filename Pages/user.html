@@ -10,14 +10,21 @@
 <body>
     <header>
         <h1>Oglasi</h1>
+        <a class="logOut" title="Odjavi se">
+            <i id="log_out" class="fa-solid fa-right-from-bracket"></i>
+            <i id="btnLogOut" class="fa-solid fa-right-from-bracket fa-fade"></i>
+        </a>
+        <a class="adAdd" title="Dodaj oglas">
+            <i id="addAd" class="fa-solid fa-file-circle-plus"></i>
+            <i id="btnAdd" class="fa-solid fa-file-circle-plus fa-bounce"></i>
+        </a>
+        <a class="watch" title="Pogledaj sve oglase">
+            <i id="img_watch" class="fa-solid fa-eye"></i>
+            <i id="btn_watch" class="fa-solid fa-eye fa-spin"></i>
+        </a>
     </header>
-    <nav>
-        <button id="logOut">Odjavi se</button>
-        <button id="new">Novi oglas</button>
-        <button id="ads">Pregled svih oglasa</button>
-    </nav>
     <section>
-        <h2>Dobro dosli</h2>
+        <h2 id="title">Dobro dosli</h2>
         <div id="userProfile">
             <h2 id="firstLastName"></h2>
             <p id="username"></p>
@@ -33,6 +40,8 @@
         </div>
         <div id="userAds"></div>
     </section>
+    
+    <script src="https://kit.fontawesome.com/f91b415289.js" crossorigin="spasa87"></script>
     <script src="../JS/user.js" type="module"></script>
 </body>
 </html>
