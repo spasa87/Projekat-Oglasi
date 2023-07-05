@@ -1,4 +1,4 @@
-import { getUserById, getAdsOfUser, getCategoryById, deleteAd, getAllCategories, getAdByCategory } from "../Api/catch_user.js";
+import { getUserById, getAdsOfUser, getCategoryById, deleteAd, getAllCategories, getAdByCategoryAndUserId } from "../Api/catch_user.js";
 
 const urlSearch = window.location.search;
 const splitUrl = urlSearch.split("=");
@@ -7,9 +7,9 @@ const id = Number(splitUrl[1]);
 let adsOfUser;
 
 async function loadPage() {
+    adsOfUser = await getAdsOfUser(id);
     loadUserProfile();
     loadSelect();
-    adsOfUser = await getAdsOfUser(id);
     loadAds(adsOfUser);
 }
 
@@ -44,11 +44,11 @@ async function loadSelect() {
     }
 }
 
-async function loadAds(adsOfUser) {
+async function loadAds(ads) {
     const userAds = document.getElementById("userAds");
     userAds.innerHTML = "";
 
-    for (let i = 0; i < adsOfUser.length; i++) {
+    for (let i = 0; i < ads.length; i++) {
         const container = document.createElement("div");
         container.classList = "container";
         userAds.appendChild(container);
@@ -65,38 +65,38 @@ async function loadAds(adsOfUser) {
         btnDel.id = "btnDel";
         btnDel.title = "Obrisi";
         btnDel.addEventListener("click", async function() {
-            await deleteAd(adsOfUser[i].id);
+            await deleteAd(ads[i].id);
             this.parentNode.parentNode.remove();
-            window.location.reload();
+            adsOfUser = adsOfUser.filter(add => add.id != ads[i].id);
             });
         linkDel.appendChild(btnDel);
         const adImg = document.createElement("img");
-        adImg.src = adsOfUser[i].image;
+        adImg.src = ads[i].image;
         container.appendChild(adImg);
         const adTitle = document.createElement("h2");
-        adTitle.innerHTML = adsOfUser[i].title;
+        adTitle.innerHTML = ads[i].title;
         adTitle.classList = "catTitle";
         container.appendChild(adTitle);
         const adDesc = document.createElement("p");
         adDesc.classList = "description";
-        adDesc.innerHTML = `Opis: ${adsOfUser[i].description}`;
+        adDesc.innerHTML = `Opis: ${ads[i].description}`;
         container.appendChild(adDesc);
         const br = document.createElement("br");
         container.appendChild(br);
         const adPrice = document.createElement("p");
-        adPrice.innerHTML = `Cena: ${adsOfUser[i].price}`;
+        adPrice.innerHTML = `Cena: ${ads[i].price}`;
         container.appendChild(adPrice);
         const adLikes = document.createElement("p");
-        adLikes.innerHTML = `Svidjanja: ${adsOfUser[i].likes}`;
+        adLikes.innerHTML = `Svidjanja: ${ads[i].likes}`;
         container.appendChild(adLikes);
         const adCategory = document.createElement("p");
-        const category = await getCategoryById(adsOfUser[i].category_id);
+        const category = await getCategoryById(ads[i].category_id);
         adCategory.innerHTML = `Kategorija: ${category.name}`;
         container.appendChild(adCategory);
         const updateLink = document.createElement("a");
         updateLink.id = "update_link";
         updateLink.innerHTML = "Ažuriraj oglas";
-        updateLink.href = `ad_edit.html?id=${id}&adId=${adsOfUser[i].id}`, "_self";
+        updateLink.href = `ad_edit.html?id=${id}&adId=${ads[i].id}`, "_self";
         container.appendChild(updateLink);
     }
 }
@@ -105,13 +105,12 @@ document.getElementById("filter").addEventListener("click", filterCat);
 async function filterCat() {
     const categoryId = Number(document.getElementById("selectCat").value);
     
-    const filterCat = await getAdByCategory(categoryId);
-
+    const filterCat = await getAdByCategoryAndUserId(categoryId, id);
+    
     if (categoryId == 0) {
         loadAds(adsOfUser);
         return;
     }
-
     loadAds(filterCat);
 };
 

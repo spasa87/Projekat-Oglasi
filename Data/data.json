@@ -47,8 +47,8 @@
     },
     {
       "title": "Volkswagen Nova Buba Cabriolet",
-      "description": "Polovno vozilo, godiste 2007., kilometraza 150.000km, gorivo Dizel. Kumbikaza 1896cm kubnih, snaga motora 77/105(kW/KS).",
-      "price": "4.690 evra",
+      "description": "Polovno vozilo, godiste 2007. Kilometraza 150.000km, gorivo Dizel. Kumbikaza 1896cm kubnih, snaga motora 77/105(kW/KS).",
+      "price": "4690 evra",
       "image": "https://gcdn.polovniautomobili.com/user-images/thumbs/2164/21641000/85ec6932529d-1920x1080.jpg",
       "likes": 5,
       "category_id": "3",
@@ -57,13 +57,33 @@
     },
     {
       "title": "Hugo/Boss majice ORIGINAL",
-      "description": "-Svaki model je dostupan u vise velicina  -Ukoliko niste zadovoljni ili vam ne odgovara, moguca je zamena ili povrat novca  Dostava na adresu u roku od 48H  Moguce i licno preuzimanje u Beogradu  Za ostale informacije i porucivanje javite se porukom",
-      "price": "3.990 din",
+      "description": "Svaki model je dostupan u vise velicina. Ukoliko niste zadovoljni ili vam ne odgovara, moguca je zamena ili povrat novca. Dostava na adresu u roku od 48H. Moguce i licno preuzimanje u Beogradu. Za ostale informacije i porucivanje javite se porukom",
+      "price": "3990 din",
       "image": "https://images.kupujemprodajem.com/photos/oglasi/9/71/152338719/152338719_6496f6fa9d05a5-80394634image.webp",
       "likes": 0,
       "category_id": "5",
       "user_id": 2,
       "id": 3
+    },
+    {
+      "title": "Caterpillar CAT S53 Black",
+      "description": "NOVO i nekorišćeno u originalnom pakovanju, garancija: 1 godina. Slanje brzom poštom na teritoriji cele Srbije ili lično po dogovoru! Plaćanje je u dinarskoj protivrednosti otkupom! Kontakt telefon: 062******",
+      "price": "390 evra",
+      "image": "https://images.kupujemprodajem.com/photos/oglasi/2/57/153981572/153981572_64a2bd1d5bb199-77355197caterpillar-cat.webp",
+      "likes": 0,
+      "category_id": "4",
+      "user_id": "3",
+      "id": 4
+    },
+    {
+      "title": "Prodaje se lokal u centru grada",
+      "description": "Prodaje se odličan lokal u centru grada. Oblik lokala je pravougaoni i ima lep portal od 3 metra. Nije direktno na ulici ali je malo sklonjen od same ulice. Pogodan je za mnoge delatnosti.",
+      "price": "57900 evra",
+      "image": "https://media.oglasi.rs/2b549225-3154-4f82-b7a5-441fed66e8a5/original-1.jpg",
+      "likes": 0,
+      "category_id": "2",
+      "user_id": 3,
+      "id": 5
     }
   ],
   "categories": [

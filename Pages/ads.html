@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../Style/ads.css">
+    <title>Oglasi</title>
+</head>
+<body>
+    <header>
+        <h1>Oglasi</h1>
+    </header>
+    <section>
+        <div id="filterBy">
+            <select id="selectCategory"></select>
+            <label>Filtriranje po ceni od:</label>
+            <input id="price1" type="number">
+            <label>do:</label>
+            <input id="price2" type="number">
+            <button id="filter">Filtriraj</button>
+        </div>
+        <div id="filterTitleAndPrice">
+            <select id="price_title">
+                <option value="price">Cena</option>
+                <option value="title">Naslov</option>
+            </select>
+            <select id="asc_desc">
+                <option value="asc">Rastući</option>
+                <option value="desc">Opadajući</option>
+            </select>
+            <button id="sort">Sortiraj</button>
+        </div>
+        <div id="wrapper"></div>
+    </section>
+    <script src="https://kit.fontawesome.com/f91b415289.js" crossorigin="spasa87"></script>
+    <script src="../JS/ads.js" type="module"></script>
+</body>
+</html>

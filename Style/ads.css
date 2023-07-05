@@ -1,0 +1,105 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lobster', cursive;
+}
+
+body {
+    background-color: #EFEFEF;
+}
+
+header {
+    background: #00bfff;
+    border: 1px solid #928e8e;
+    padding: 5px;
+}
+
+h1 {
+    display: inline-block;
+    font-size: 2.5rem;
+}
+
+section {
+    width: 90%;
+    margin: 10px auto 0 auto;
+    text-align: center;
+}
+
+.container {
+    float: left;
+    flex: content;
+    width: calc(100% / 3.03);
+    height: 560px;
+    margin-top: 10px;
+    margin-left: 2px;
+    padding: 5px;
+    background-color: #48adcf;
+}
+
+.container img {
+    width: 200px;
+    height: 200px;
+}
+
+.container h2 {
+    height: 20%;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.container .description {
+    margin-top: 10px;
+    max-height: 60px;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.container #user_name {
+    margin-top: 10px;
+    font-size: 1.3rem;
+}
+
+.container a {
+    display: block;
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: white;
+    text-decoration: none;
+}
+
+.container a:hover {
+    font-size: 1.4rem;
+    color: red;
+    text-decoration: underline;
+}
+
+#selectCategory {
+    width: 200px;
+    font-size: 1.1rem;
+}
+
+#filterBy label, input, button {
+    font-size: 1.1rem;
+}
+
+#filterBy button:hover {
+    cursor: pointer;
+    background-color: red;
+    color: yellow;
+}
+
+#filterTitleAndPrice {
+    margin-top: 10px;
+}
+
+#filterTitleAndPrice select {
+    width: 200px;
+    font-size: 1.1rem;
+}
+
+#filterTitleAndPrice button:hover {
+    cursor: pointer;
+    background-color: red;
+    color: yellow;
+}

@@ -28,10 +28,10 @@ async function getAllCategories() {
     return data;
 }
 
-async function getAdByCategory(id) {
-    const response = await fetch(`http://localhost:3000/ads?category_id=${id}`, {method: "GET"});
+async function getAdByCategoryAndUserId(id, user_id) {
+    const response = await fetch(`http://localhost:3000/ads?category_id=${id}&user_id=${user_id}`, {method: "GET"});
     const data = await response.json();
     return data;
 }
 
-export { getUserById, getAdsOfUser, getCategoryById, deleteAd, getAllCategories, getAdByCategory };
+export { getUserById, getAdsOfUser, getCategoryById, deleteAd, getAllCategories, getAdByCategoryAndUserId };

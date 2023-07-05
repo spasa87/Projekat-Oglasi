@@ -20,11 +20,6 @@ h1 {
     font-size: 2.5rem;
 }
 
-nav {
-    height: 50px;
-    background-color: #00bfff;
-}
-
 header .logOut, .adAdd, .watch {
     float: right;
     margin: 10px 5px 0 0;
