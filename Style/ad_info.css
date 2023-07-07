@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lobster', cursive;
+}
+
+body {
+    background-color: #EFEFEF;
+}
+
+header {
+    background: #00bfff;
+    border: 1px solid #928e8e;
+    padding: 5px;
+}
+
+h1 {
+    display: inline-block;
+    font-size: 2.5rem;
+}
+
+header .goBack {
+    float: right;
+    margin: 10px 5px 0 0;
+    font-size: 2rem;
+    color: #0081ac;
+}
+
+.goBack:hover #img_goBack, .goBack #btn_goBack {
+    display: none;
+}
+
+.goBack:hover #btn_goBack {
+    display: inline-block;
+    cursor: pointer;
+}
+
+#showAd {
+    position: relative;
+    width: 300px;
+    height: 600px;
+    margin: 10px auto 0 auto;
+    background-color: #48adcf;
+    text-align: center;
+}
+
+#showAd img {
+    width: 200px;
+    height: 200px;
+}
+
+#showAd #ad_title {
+    height: 20%;
+    overflow: hidden;
+    overflow-y: auto;
+    font-size: 2rem;
+}
+
+#showAd p {
+    font-size: 1rem;
+}
+
+#showAd #ad_description {
+    margin-top: 10px;
+    max-height: 60px;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+#ad_likes {
+    display: inline-block;
+}
+
+#btnLike {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    opacity: 0;
+    cursor: pointer;
+}
+
+ #likeLabel {
+    font-size: 1.4rem;
+    color: #00bfff;
+ }
+
+#btnLike:checked + #likeLabel {
+    color: royalblue;
+}
+
+#comment {
+    margin-top: 10px;
+    text-align: center;
+}
+
+#comment button {
+    padding: 5px;
+    font-size: 1rem;
+    background-color: rgb(243, 198, 102);
+    cursor: pointer;
+}
+
+#comment #commentText {
+    font-size: 1.2rem;
+}
+
+#comments {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#comments .commentContainer {
+    margin-top: 10px;
+    background-color: #48adcf;
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 1.2rem;
+}
+
+.commentContainer h4 {
+    display: inline-block;
+}
+
+.commentContainer .btnDel {
+    float: right;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    border: 0;
+    background-color: #48adcf;
+    cursor: pointer;
+}

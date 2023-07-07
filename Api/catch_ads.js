@@ -28,5 +28,11 @@ async function getAdsByCategory(id) {
     return data;
 }
 
+async function getLikesOfAd(ad_id) {
+    const response = await fetch(`http://localhost:3000/likes?ad_id=${ad_id}`, {method: "GET"});
+    const data = response.json();
+    return data;
+}
+
 export { getAllAds, getCategoryById, getUserById,
-    getAllCategories, getAdsByCategory };
+    getAllCategories, getAdsByCategory, getLikesOfAd };

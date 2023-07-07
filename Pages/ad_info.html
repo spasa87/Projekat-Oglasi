@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../Style/ad_info.css">
+    <title>Oglas</title>
+</head>
+<body>
+    <header>
+        <h1>Oglasi</h1>
+        <a class="goBack" title="Idi nazad">
+            <i id="img_goBack" class="fa-solid fa-circle-left"></i>
+            <i id="btn_goBack" class="fa-solid fa-circle-left fa-flip"></i>
+        </a>
+    </header>
+    <section>
+        <div id="showAd">
+            <h3 id="ad_title"></h3>
+            <br>
+            <img id="ad_image">
+            <br>
+            <p id="ad_description"></p>
+            <br>
+            <p id="ad_price"></p>
+            <br>
+            <input type="checkbox" id="btnLike" name="like">
+            <label for="like" id="likeLabel">
+                <i class="fa-solid fa-thumbs-up"></i>
+            </label>
+            <p id="ad_likes"></p>
+            <br>
+            <p id="ad_category"></p>
+            <h2 id="user"></h2>
+        </div>
+        <div id="comment">
+            <textarea id="commentText" rows="3" cols="50" placeholder="Unesite komentar..."></textarea>
+            <br>
+            <button id="post_comment">Postavite komentar</button>
+        </div>
+        <div id="comments"></div>
+    </section>
+    <script src="https://kit.fontawesome.com/f91b415289.js" crossorigin="spasa87"></script>
+    <script src="../JS/ad_info.js" type="module"></script>
+</body>
+</html>

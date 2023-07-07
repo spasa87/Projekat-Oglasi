@@ -36,21 +36,20 @@
   ],
   "ads": [
     {
-      "id": 1,
       "title": "Desktop racunar",
       "description": "Kuciste feniks bluebird 4007, amd athlon 3000g/8gb ddr4/nvme ssd 256gb, matična ploča socket am4 amd a320, procesor amd athlon 3000g 3.5ghz, 2c/4t, socket am4, vega 3gpu, ddr4 memorija 8gb, nvme ssd 256gb, kućište everest flat glass 4, 4 rainbow ventilatora, kaljeno staklo, 500w",
       "price": "49999 dinara",
       "image": "https://img.halooglasi.com/slike/oglasi/Thumbs/220124/m/desktop-racunar-5425641488461-71798721148.jpg",
-      "likes": 30,
+      "likes": 1,
       "category_id": 1,
-      "user_id": 2
+      "user_id": 2,
+      "id": 1
     },
     {
       "title": "Volkswagen Nova Buba Cabriolet",
       "description": "Polovno vozilo, godiste 2007. Kilometraza 150.000km, gorivo Dizel. Kumbikaza 1896cm kubnih, snaga motora 77/105(kW/KS).",
       "price": "4690 evra",
       "image": "https://gcdn.polovniautomobili.com/user-images/thumbs/2164/21641000/85ec6932529d-1920x1080.jpg",
-      "likes": 5,
       "category_id": "3",
       "user_id": "2",
       "id": 2
@@ -60,7 +59,6 @@
       "description": "Svaki model je dostupan u vise velicina. Ukoliko niste zadovoljni ili vam ne odgovara, moguca je zamena ili povrat novca. Dostava na adresu u roku od 48H. Moguce i licno preuzimanje u Beogradu. Za ostale informacije i porucivanje javite se porukom",
       "price": "3990 din",
       "image": "https://images.kupujemprodajem.com/photos/oglasi/9/71/152338719/152338719_6496f6fa9d05a5-80394634image.webp",
-      "likes": 0,
       "category_id": "5",
       "user_id": 2,
       "id": 3
@@ -70,7 +68,6 @@
       "description": "NOVO i nekorišćeno u originalnom pakovanju, garancija: 1 godina. Slanje brzom poštom na teritoriji cele Srbije ili lično po dogovoru! Plaćanje je u dinarskoj protivrednosti otkupom! Kontakt telefon: 062******",
       "price": "390 evra",
       "image": "https://images.kupujemprodajem.com/photos/oglasi/2/57/153981572/153981572_64a2bd1d5bb199-77355197caterpillar-cat.webp",
-      "likes": 0,
       "category_id": "4",
       "user_id": "3",
       "id": 4
@@ -80,7 +77,6 @@
       "description": "Prodaje se odličan lokal u centru grada. Oblik lokala je pravougaoni i ima lep portal od 3 metra. Nije direktno na ulici ali je malo sklonjen od same ulice. Pogodan je za mnoge delatnosti.",
       "price": "57900 evra",
       "image": "https://media.oglasi.rs/2b549225-3154-4f82-b7a5-441fed66e8a5/original-1.jpg",
-      "likes": 0,
       "category_id": "2",
       "user_id": 3,
       "id": 5
@@ -111,6 +107,33 @@
       "id": 5,
       "name": "Odeća",
       "image": "https://th.bing.com/th/id/R.e31289a0ac704ce8858022cdc32f3684?rik=a4xw3NUw%2bM7qhw&riu=http%3a%2f%2fimg.izismile.com%2fimg%2fimg2%2f20090319%2fmale_model_37.jpg&ehk=XDxbukh%2foi1F7sd2Y5nVrEJcQmPMoRjrQe3H4h5hbuA%3d&risl=&pid=ImgRaw&r=0"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "text": "Super",
+      "adId": 2,
+      "userId": 3
+    },
+    {
+      "id": 2,
+      "text": "Odlicno",
+      "adId": 4,
+      "userId": 2
+    },
+    {
+      "text": "Lepo",
+      "adId": 5,
+      "userId": 2,
+      "id": 3
+    }
+  ],
+  "likes": [
+    {
+      "id": 1,
+      "ad_id": 1,
+      "user_id": 3
     }
   ]
 }

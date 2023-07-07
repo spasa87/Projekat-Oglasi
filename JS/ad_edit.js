@@ -1,11 +1,11 @@
-import { getAllCategories, getAdById, getCategoryById, updateAd } from "../Api/catch_adEdit.js";
+import { getAllCategories, getAdById, getCategoryById, updateAd, getLikesOfAd } from "../Api/catch_adEdit.js";
 
 const urlSearch = window.location.search;
 const splitUrl = urlSearch.split("&");
 const splitUrlFirst = splitUrl[0].split("=");
-const user_id = splitUrlFirst[1];
+const user_id = Number(splitUrlFirst[1]);
 const splitUrlSecond = splitUrl[1].split("=");
-const ad_id = splitUrlSecond[1];
+const ad_id = Number(splitUrlSecond[1]);
 
 let ad;
 
@@ -37,11 +37,16 @@ async function loadSelect() {
 
 async function loadAd() {
     const category = await getCategoryById(ad.category_id);
+    const likes = await getLikesOfAd(ad_id);
     document.getElementById("ad_title").innerHTML = ad.title;
     document.getElementById("ad_image").src = ad.image;
     document.getElementById("ad_description").innerHTML = ad.description;
     document.getElementById("ad_price").innerHTML = ad.price;
-    document.getElementById("ad_likes").innerHTML = ad.likes;
+    let like = 0;
+    for(let i = 0; i < likes.length; i++) {
+        like++;
+    }
+    document.getElementById("ad_likes").innerHTML = like;
     document.getElementById("ad_category").innerHTML = category.name;
 }
 

@@ -1,4 +1,5 @@
-import { getUserById, getAdsOfUser, getCategoryById, deleteAd, getAllCategories, getAdByCategoryAndUserId } from "../Api/catch_user.js";
+import { getUserById, getAdsOfUser, getCategoryById, deleteAd,
+    getAllCategories, getAdByCategoryAndUserId, getLikesOfAd } from "../Api/catch_user.js";
 
 const urlSearch = window.location.search;
 const splitUrl = urlSearch.split("=");
@@ -87,7 +88,13 @@ async function loadAds(ads) {
         adPrice.innerHTML = `Cena: ${ads[i].price}`;
         container.appendChild(adPrice);
         const adLikes = document.createElement("p");
-        adLikes.innerHTML = `Svidjanja: ${ads[i].likes}`;
+        const likes = await getLikesOfAd(ads[i].id);
+        console.log(likes);
+        let like = 0;
+        for(let j = 0; j < likes.length; j++) {
+            like++
+        }
+        adLikes.innerHTML = `Svidjanja: ${like}`;
         container.appendChild(adLikes);
         const adCategory = document.createElement("p");
         const category = await getCategoryById(ads[i].category_id);

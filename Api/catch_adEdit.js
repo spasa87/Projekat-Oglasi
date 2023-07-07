@@ -34,4 +34,10 @@ async function updateAd(id, title, description, price, image, likes, category_id
     return data;
 }
 
-export { getAllCategories, getAdById, getCategoryById, updateAd };
+async function getLikesOfAd(ad_id) {
+    const response = await fetch(`http://localhost:3000/likes?ad_id=${ad_id}`, {method: "GET"});
+    const data = response.json();
+    return data;
+}
+
+export { getAllCategories, getAdById, getCategoryById, updateAd, getLikesOfAd };

@@ -1,4 +1,5 @@
-import { getAllAds, getCategoryById, getUserById, getAllCategories, getAdsByCategory } from "../Api/catch_ads.js";
+import { getAllAds, getCategoryById, getUserById,
+    getAllCategories, getAdsByCategory, getLikesOfAd } from "../Api/catch_ads.js";
 
 const urlSearch = window.location.search;
 const splitUrl = urlSearch.split("=");
@@ -54,7 +55,12 @@ async function loadAds(ads) {
         adPrice.innerHTML = `Cena: ${ads[i].price}`;
         container.appendChild(adPrice);
         const adLikes = document.createElement("p");
-        adLikes.innerHTML = `Svidjanja: ${ads[i].likes}`;
+        const likes = await getLikesOfAd(ads[i].id);
+        let like = 0;
+        for(let j = 0; j < likes.length; j++) {
+            like++;
+        }
+        adLikes.innerHTML = `Svidjanja: ${like}`;
         container.appendChild(adLikes);
         const adCategory = document.createElement("p");
         const category = await getCategoryById(ads[i].category_id);
@@ -63,7 +69,7 @@ async function loadAds(ads) {
         const user_name = document.createElement("p");
         const user = await getUserById(ads[i].user_id);
         user_name.id = "user_name";
-        user_name.innerHTML = `${user.first_name} ${user.last_name}`;
+        user_name.innerHTML = user.username;
         container.appendChild(user_name);
         const info = document.createElement("a");
         info.innerHTML = "Pogledaj oglas";
@@ -94,32 +100,12 @@ document.getElementById("filter").addEventListener("click", async function() {
         return;
     }
 
-    let newArr = [];
-    for (let i = 0; i < filteredAds.length; i++) {
-        const priceSplit = filteredAds[i].price.split(" ");
-        const realPrice = priceSplit[0];
-        
-        if (realPrice >= price1 && realPrice <= price2) {
-            newArr.push(filteredAds[i]);
-        } else {
-            wrapper.innerHTML = "";
-        }
-    }
+    const newArr = filteredAds.filter(ad => ad.price.split(" ")[0] >= price1 &&  ad.price.split(" ")[0] <= price2);
     loadAds(newArr);
 
     const newArr2 = [];
     if (filteredAds == 0) {
-        for(let i = 0; i < allAds.length; i++) {
-            const priceSplit = allAds[i].price.split(" ");
-            const realPrice = priceSplit[0];
-            
-            if (realPrice >= price1 && realPrice <= price2) {
-                newArr2.push(allAds[i]);
-                console.log(newArr2);
-            } else {
-                wrapper.innerHTML = "";
-            }
-        }
+        const newArr2 = allAds.filter(ad => ad.price.split(" ")[0] >= price1 &&  ad.price.split(" ")[0] <= price2);
         loadAds(newArr2);
     }
 })
@@ -127,26 +113,44 @@ document.getElementById("filter").addEventListener("click", async function() {
 document.getElementById("sort").addEventListener("click", function() {
     const price_title = document.getElementById("price_title").value;
     const asc_desc = document.getElementById("asc_desc").value;
-    // const ads = [...document.querySelectorAll(".container")];
-    // let elements = [];
-
-    // for (let i = 0; i < ads.length; i++) {
-    //     elements.push({...ads[i].children});
-    // }
-    // console.log(elements);
-    // if(price_title == "price" && asc_desc == "asc") {
-    //     const price_asc = elements.sort((a, b) => a.h3 - b.h3);
-    //     loadAds(price_asc);
-    // }
     let price_asc = [];
+    let price_desc = [];
+    let title_asc = [];
+    let title_desc = [];
+    
     if (price_title == "price" && asc_desc == "asc") {
-        for(let i = 0; i < allAds.length; i++) {
-            const priceSplit = allAds[i].price.split(" ");
-            const realPrice = priceSplit[0];
-                price_asc = allAds.sort((a, b) => a.realPrice - b.realPrice);
-            }
-        }
+        price_asc = allAds.sort((a, b) => {
+            const aRealPrice = a.price.split(" ")[0];
+            const bRealPrice = b.price.split(" ")[0];
+            return aRealPrice - bRealPrice;
+        })
         loadAds(price_asc);
+    }
+    
+
+    if (price_title == "price" && asc_desc == "desc") {
+        price_desc = allAds.sort((a, b) => {
+            const aRealPrice = a.price.split(" ")[0];
+            const bRealPrice = b.price.split(" ")[0];
+            return bRealPrice - aRealPrice;
+        })
+        loadAds(price_desc);
+    }
+    
+    if (price_title == "title" && asc_desc == "asc") {
+        title_asc = allAds.sort((a, b) => a.title.length - b.title.length);
+        loadAds(title_asc);
+    }
+    
+
+    if (price_title == "title" && asc_desc == "desc") {
+        title_desc = allAds.sort((a, b) => b.title.length - a.title.length);
+        loadAds(title_desc);
+    }
+});
+
+document.getElementById("btn_profile").addEventListener("click", function() {
+    window.open(`user.html?id=${id}`, "_self");
 })
 
 window.addEventListener("load", loadPage);
