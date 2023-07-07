@@ -16,24 +16,6 @@ async function getUserById(id) {
     return data;
 }
 
-async function updateAd(id, title, description, price, image, likes, category_id, user_id) {
-    const response = await fetch(`http://localhost:3000/ads/${id}`, {method: "PUT",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            title: title,
-            description: description,
-            price: price,
-            image: image,
-            likes: likes,
-            category_id: category_id,
-            user_id: user_id
-        })});
-    const data = await response.json();
-    return data;
-}
-
 async function getCommentsForAd(ad_id) {
     const response = await fetch(`http://localhost:3000/comments?adId=${ad_id}`, {method: "GET"});
     const data = await response.json();
@@ -88,6 +70,5 @@ async function deleteComment(id) {
 }
 
 export { getAdById, getCategoryById, getUserById,
-    updateAd, getCommentsForAd, addComment,
-    getLikesOfAd, addLike, dislike,
-    deleteComment };
+    getCommentsForAd, addComment, getLikesOfAd,
+    addLike, dislike, deleteComment };

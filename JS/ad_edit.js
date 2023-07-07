@@ -61,7 +61,7 @@ async function adUpdate() {
         document.getElementById("error").innerHTML = "Niste popunili sva polja.";
         return;
     }
-    await updateAd(ad_id, title, description, price, image, ad.likes, categoryId, user_id);
+    await updateAd(ad_id, title, description, price, image, categoryId, user_id);
     window.open(`user.html?id=${user_id}`, "_self");
 }
 

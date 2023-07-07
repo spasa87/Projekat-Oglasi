@@ -31,7 +31,7 @@ document.getElementById("addAd").addEventListener("click", async function() {
         return;
     }
 
-    await addAd(title, description, price, image, 0, categoryId, id);
+    await addAd(title, description, price, image, categoryId, id);
     window.open(`user.html?id=${id}`, "_self");
 });
 

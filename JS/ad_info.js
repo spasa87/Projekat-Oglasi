@@ -1,7 +1,6 @@
 import { getAdById, getCategoryById, getUserById,
-    updateAd, getCommentsForAd, addComment,
-    getLikesOfAd, addLike, dislike,
-    deleteComment } from "../Api/catch_adInfo.js";
+    getCommentsForAd, addComment, getLikesOfAd,
+    addLike, dislike, deleteComment } from "../Api/catch_adInfo.js";
 
 const urlSearch = window.location.search;
 const splitUrl = urlSearch.split("&");

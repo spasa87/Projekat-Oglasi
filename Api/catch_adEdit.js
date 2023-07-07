@@ -16,7 +16,7 @@ async function getCategoryById(id) {
     return data;
 }
 
-async function updateAd(id, title, description, price, image, likes, category_id, user_id) {
+async function updateAd(id, title, description, price, image, category_id, user_id) {
     const response = await fetch(`http://localhost:3000/ads/${id}`, {method: "PUT",
         headers: {
             "Content-Type": "application/json"
@@ -26,7 +26,6 @@ async function updateAd(id, title, description, price, image, likes, category_id
             description: description,
             price: price,
             image: image,
-            likes: likes,
             category_id: category_id,
             user_id: user_id
         })});

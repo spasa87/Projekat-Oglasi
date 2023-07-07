@@ -1,4 +1,4 @@
-async function addAd(title, description, price, image, likes, category_id, user_id) {
+async function addAd(title, description, price, image, category_id, user_id) {
     const response = await fetch("http://localhost:3000/ads", {method: "POST",
     headers: {
         "Content-Type": "application/json"
@@ -8,7 +8,6 @@ async function addAd(title, description, price, image, likes, category_id, user_
         description: description,
         price: price,
         image: image,
-        likes: likes,
         category_id: category_id,
         user_id: user_id
         })
