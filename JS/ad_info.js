@@ -28,6 +28,9 @@ async function loadAd() {
     document.getElementById("ad_price").innerHTML = ad.price;
     let like = 0;
     for (let i = 0; i < likes.length; i++) {
+        if(likes[i].user_id == user_id){
+            document.getElementById("btnLike").checked = true;
+        }
         like++
     }
     document.getElementById("ad_likes").innerHTML = like;
@@ -37,6 +40,7 @@ async function loadAd() {
 
 document.getElementById("btnLike").addEventListener("click", async function() {
     let value = Number(document.getElementById("ad_likes").innerHTML);
+    const likes = await getLikesOfAd(ad_id);
     if(document.getElementById("btnLike").checked == true) {
         value += 1;
         document.getElementById("ad_likes").innerHTML = value;
@@ -44,7 +48,7 @@ document.getElementById("btnLike").addEventListener("click", async function() {
     } else {
         value -= 1;
         document.getElementById("ad_likes").innerHTML = value;
-        const likes = await getLikesOfAd(ad_id);
+        
         for(let i = 0; i < likes.length; i++) {
             if(likes[i].user_id == user_id) {
                 await dislike(likes[i].id);
