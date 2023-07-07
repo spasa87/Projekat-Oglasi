@@ -55,7 +55,7 @@ btnLeft.addEventListener('click', changeImage)
 btnRight.addEventListener('click', changeImage)
 
 function changeImage() {
-    carousel.scrollLeft += this.id === 'left' ? -firstImageWidth : firstImageWidth
+    carousel.scrollLeft += this.id=== 'left' ? -firstImageWidth * 3 : firstImageWidth * 3
 }
 
 document.getElementById("reg").addEventListener("click", function() {
