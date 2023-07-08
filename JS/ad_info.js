@@ -25,14 +25,11 @@ async function loadAd() {
     document.getElementById("ad_image").src = ad.image;
     document.getElementById("ad_description").innerHTML = ad.description;
     document.getElementById("ad_price").innerHTML = ad.price;
-    let like = 0;
-    for (let i = 0; i < likes.length; i++) {
-        if(likes[i].user_id == user_id){
-            document.getElementById("btnLike").checked = true;
-        }
-        like++
+    document.getElementById("ad_likes").innerHTML = likes.length;
+    const likeUser = likes.find(like => like.user_id == user_id);
+    if (likeUser != undefined) {
+        document.getElementById("btnLike").checked = true;
     }
-    document.getElementById("ad_likes").innerHTML = like;
     document.getElementById("ad_category").innerHTML = category.name;
     document.getElementById("user").innerHTML = user_name.username;
 }

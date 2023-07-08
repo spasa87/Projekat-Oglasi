@@ -56,11 +56,11 @@ async function loadAds(ads) {
         container.appendChild(adPrice);
         const adLikes = document.createElement("p");
         const likes = await getLikesOfAd(ads[i].id);
-        let like = 0;
-        for(let j = 0; j < likes.length; j++) {
-            like++;
-        }
-        adLikes.innerHTML = `Svidjanja: ${like}`;
+        // let like = 0;
+        // for(let j = 0; j < likes.length; j++) {
+        //     like++;
+        // }
+        adLikes.innerHTML = `Svidjanja: ${likes.length}`;
         container.appendChild(adLikes);
         const adCategory = document.createElement("p");
         const category = await getCategoryById(ads[i].category_id);
@@ -138,13 +138,25 @@ document.getElementById("sort").addEventListener("click", function() {
     }
     
     if (price_title == "title" && asc_desc == "asc") {
-        title_asc = allAds.sort((a, b) => a.title.length - b.title.length);
+        title_asc = allAds.sort((a, b) => {
+            if (a.title < b.title) {
+                return -1;
+            } else {
+                return 1;
+            }
+        });
         loadAds(title_asc);
     }
     
 
     if (price_title == "title" && asc_desc == "desc") {
-        title_desc = allAds.sort((a, b) => b.title.length - a.title.length);
+        title_desc = allAds.sort((a, b) => {
+            if (a.title < b.title) {
+                return 1;
+            } else {
+                return -1;
+            }
+        });
         loadAds(title_desc);
     }
 });
